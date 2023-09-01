@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+
+  }
+  
+  .left-section {
+    flex: 1;
+    background: linear-gradient(120deg,#0c4786,#007BFF);
+    position: relative;
+    color: white;
+    padding: 40px;
+    box-shadow: 3px -1px 9px 0px #20446b66;
+    z-index: 2;
+    border-radius: 0px 0px 50px 0px;
+
+  }
+
+
+
+.logo {
+    position: absolute;
+    top: -15%;
+    right: 0%;
+    width: 50%;
+    height: 50%;
+    background-image: url(../images/Logo\ VILIBRAS.png); /* Substitua pelo caminho da imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.336));
+    opacity: 0.7;
+  }
+
+  nav{
+    position: absolute;
+    bottom: 5%;
+  }
+  
+  nav a{
+    color:black;
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    border-radius: 30px;
+  }
+
+  nav a#cadastro-professor{
+    margin: 0px 0px 0px 10px;
+    background-color: rgb(253, 253, 54);
+    color: gray;
+  }
+
+  
+  nav a:hover{
+    opacity: 0.5;
+    transition: .7s;
+  }
+
+  nav img{
+    width: 200px;
+
+  }
+
+  p#frase{
+    position: relative;
+    top: 150px;
+    font-size: 22px;
+
+  }
+
+  p#frase strong{
+    background-color: white;
+    color: #007BFF;
+    border-radius: 15px;
+    padding: 2px;
+  }
+
+  /* .logo2 {
+    position: absolute;
+    bottom: -160px;
+    right: 500px;
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/Logo\ VILIBRAS.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter:brightness(20%);
+    opacity: 0.9;
+    z-index: -1;
+  } */
+  
+  .wave-pattern {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+  }
+  
+  .welcome-message {
+    font-size: 24px;
+  }
+  
+  .right-section {
+    flex: 1;
+    padding: 40px;
+    z-index: 1;
+  }
+
+  .right-section h1{
+    font-family: monospace;
+    border-right: 4px solid;
+    width: 14ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(14), blinking 0.5s infinite step-end alternate;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+  }
+
+  button:hover{
+    opacity: 0.5;
+    transition: .7s;
+  }
+  
+  label {
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 10px;
+
+  }
+  
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  a {
+    color: #007BFF;
+  }
+  
+  .sexo{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @keyframes typing{
+    from{
+      width: 0;
+    }
+  }
+
+  @keyframes blinking{
+    50%{
+      border-color: transparent;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    .logo {
+      position: absolute;
+      width: 35%;
+      height: 30%;
+      top: -7%;
+      left: 75%;
+
+    }
+
+    p#frase{
+      font-size: 14px;
+      position: absolute;
+      top: 170px;
+      width: 250px;
+    }
+    nav{
+      display: flex;
+      flex-wrap:wrap;
+      padding: 80px 0;
+    }
+    
+    nav a{
+      position: absolute;
+      font-size: 12px;
+      flex:1;
+      padding: 10px;
+      top: 70%;
+    }
+  
+    nav a#cadastro-professor{
+      margin: 0px 0px 0px 150px;
+    }
+    
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+      font-size: 18px;
+    }
+    .logo {
+      position: absolute;
+      width: 35%;
+      height: 18%;
+      top: -7%;
+      left: 65%;
+
+    }
+    p.welcome-message{
+      font-size: 21px;
+    }
+
+    p#frase{
+      font-size: 18px;
+      position: absolute;
+      top: 205px;
+      width: 250px;
+    }
+    nav{
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 80px 0;
+      font-size: 16px;
+    }
+    nav h2{
+      font-size: 22px;
+    }
+    
+    nav a{
+      flex:1;
+      position: absolute;
+      font-size: 16px;
+      padding: 10px;
+      top: 60%;
+    }
+  
+    nav a#cadastro-professor{
+      top: 90%;
+    }
+
+    .right-section{
+      flex: 2;
+      overflow-x: hidden;
+    }
+
+  }
+  
+  /* Estilos para telas maiores (acima de 1024px de largura) */
+  @media screen and (min-width: 1025px) {
+  }

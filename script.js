@@ -1,5 +1,5 @@
 window.addEventListener("scroll", function() {
-    var header = document.querySelector(".header");
+    var header = document.querySelector(".left-section");
     var scrollPosition = window.scrollY;
   
     if (scrollPosition > 0) {

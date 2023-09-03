@@ -1,3 +1,21 @@
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #007bff; 
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -28,6 +46,14 @@ body {
 
   }
 
+  p.welcome-message{
+    text-shadow: 2px 1px 4px #ffffff5e;
+  }
+
+  .left-section h1{
+    text-shadow: 2px 1px 14px #ffffff5e;
+    
+  }
 
 .logo {
     position: absolute;
@@ -185,29 +211,50 @@ body {
   }
 
   @media screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: #007bff; 
+      border-radius: 3px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background-color: #f0f0f0;
+    }
+    
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #0056b3;
+    }
     body {
       font-size: 14px;
     }
 
     .logo {
       position: absolute;
-      width: 25%;
-      height: 50%;
-      top: -7%;
-      left: 75%;
+      width: 50%;
+      height: 90%;
+      top: -10%;
+      left: 60%;
+      z-index: -1;
 
     }
 
     .left-section{
+      position: sticky;
+      top: -1px;
       padding: 80px;
     }
 
     .intro{
       position: absolute;
       top: 5%;
-      right: 40%;
+      right: 42%;
     }
 
+    
     p#frase{
       font-size: 14px;
       position: absolute;

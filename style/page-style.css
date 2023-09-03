@@ -12,6 +12,7 @@ body {
     flex-wrap: wrap;
     height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 
   }
   
@@ -28,14 +29,13 @@ body {
   }
 
 
-
 .logo {
     position: absolute;
     top: -15%;
     right: 0%;
     width: 50%;
     height: 50%;
-    background-image: url(../images/Logo\ VILIBRAS.png); /* Substitua pelo caminho da imagem */
+    background-image: url(../images/Logo\ VILIBRAS.png);
     background-size: cover;
     background-repeat: no-repeat;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.336));
@@ -198,10 +198,20 @@ body {
 
     }
 
+    .left-section{
+      padding: 80px;
+    }
+
+    .intro{
+      position: absolute;
+      top: 5%;
+      right: 40%;
+    }
+
     p#frase{
       font-size: 14px;
       position: absolute;
-      top: 170px;
+      top: 115px;
       width: 250px;
     }
     nav{
@@ -231,15 +241,33 @@ body {
     }
     .logo {
       position: absolute;
-      width: 35%;
-      height: 18%;
-      top: -7%;
-      left: 65%;
+      width: 50%;
+      height: 25%;
+      top: 0%;
+      left: 50%;
+      z-index: -1;
 
     }
     p.welcome-message{
       font-size: 21px;
+      text-shadow: 2px 1px 4px #ffffff5e;
     }
+
+    .left-section h1{
+      text-shadow: 2px 1px 14px #ffffff5e;
+      
+    }
+
+    .left-section{
+      padding: 80px;
+    }
+
+    .intro{
+      position: absolute;
+      top: 5%;
+      right: 40%;
+    }
+
 
     p#frase{
       font-size: 18px;

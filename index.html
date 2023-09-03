@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/page-style.css">
-    <script src="script.js"></script>
+    <script src="style/"></script>
     <title>VILIBRAS | Cadastro</title>
 </head>
 <body>
+  <div class="vertical-navbar"></div>
   <div class="container">
-    <div class="left-section" name="left-section">
+    <div class="left-section">
       <div class="wave-pattern">
         <div class="intro">
           <h1>VILIBRAS</h1>
@@ -57,16 +58,33 @@
     </div>
   </div>
   <!-- <script>
-    const colors = ["#007BFF", "#FF5733", "#39CC86", "#E74C3C", "#9B59B6"];
-    let currentIndex = 0;
-    const wavePattern = document.querySelector('.wave-pattern');
+window.addEventListener("scroll", function() {
+    var header = document.querySelector(".left-section");
+    var scrollPosition = window.scrollY;
   
-    function changeColor() {
-      wavePattern.style.backgroundColor = colors[currentIndex];
-      currentIndex = (currentIndex + 1) % colors.length;
+    if (scrollPosition > 0) {
+      header.classList.add("shadows");
+    } else {
+      header.classList.remove("shadows");
     }
-  
-    setInterval(changeColor, 2000); // Alterna as cores a cada 2 segundos (ajuste conforme necessário)
-  </script>   -->
+  });
+
+
+  const colors = ["#007BFF", "#FF5733", "#39CC86", "#E74C3C", "#9B59B6"];
+let currentIndex = 0;
+const leftSection = document.querySelector('.left-section');
+const verticalNavbar = document.querySelector('.vertical-navbar'); // Substitua pelo seletor correto
+
+function changeColor() {
+  const newColor = colors[currentIndex];
+  leftSection.style.background = newColor;
+  verticalNavbar.style.background = newColor; // Atualize a cor de fundo da barra de navegação vertical
+  currentIndex = (currentIndex + 1) % colors.length;
+}
+
+setInterval(changeColor, 2000);
+
+
+  </script> -->
 </body>
 </html>

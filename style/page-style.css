@@ -3,17 +3,17 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #007bff; 
+  background: #007bff; 
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f0f0f0;
+  background: #f0f0f0;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0056b3;
+  background: #0056b3;
 }
 
 body {
@@ -234,7 +234,7 @@ body {
 
     .logo {
       position: absolute;
-      width: 50%;
+      width: 45%;
       height: 90%;
       top: -10%;
       left: 60%;

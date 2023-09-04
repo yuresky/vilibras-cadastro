@@ -47,6 +47,18 @@
         <input type="password" placeholder="Senha" />
         <label for="data-nascimento">Data de Nascimento:</label>
         <input type="date" id="data-nascimento" name="data-nascimento" required><br><br>
+        <!-- <label for="comentarios">Comentários:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Digite seus comentários aqui"></textarea>
+
+        <label for="sugestoes">Sugestões:</label>
+        <input list="sugestoes" id="sugestoesInput" name="sugestoes" placeholder="Escolha ou digite uma sugestão">
+        <datalist id="sugestoes">
+            <option value="blablabla">
+            <option value="blablabla">
+            <option value="blablabla">
+            <option value="blablabla">
+            <option value="blablabla">
+        </datalist> -->
         <button type="submit">Inscrição</button>
         <label>
           <input type="checkbox" />
@@ -72,12 +84,12 @@ window.addEventListener("scroll", function() {
   const colors = ["#007BFF", "#FF5733", "#39CC86", "#E74C3C", "#9B59B6"];
 let currentIndex = 0;
 const leftSection = document.querySelector('.left-section');
-const verticalNavbar = document.querySelector('.vertical-navbar'); // Substitua pelo seletor correto
+const verticalNavbar = document.querySelector('.vertical-navbar');
 
 function changeColor() {
   const newColor = colors[currentIndex];
   leftSection.style.background = newColor;
-  verticalNavbar.style.background = newColor; // Atualize a cor de fundo da barra de navegação vertical
+  verticalNavbar.style.background = newColor;
   currentIndex = (currentIndex + 1) % colors.length;
 }
 

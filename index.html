@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/page-style.css">
-    <script src="style/"></script>
     <title>VILIBRAS | Cadastro</title>
 </head>
 <body>
@@ -19,16 +18,22 @@
             <p id="frase">Somos a <strong>melhor plataforma</strong> de ensino de informática em Língua Brasileira de Sinais</p>
         </div>
         <div class="logo"></div>
-        <nav>
-        <h2>Você é professor (a)?</h2>
-          <a href="#">Logar como professor</a>
-          <a id="cadastro-professor" href="#">Cadastrar professor</a>
-        </nav>
       </div>
     </div>
     <div class="right-section">
+      <div class="logo_right-section"></div>
       <h1>Cadastro aluno</h1>
         <!-- <div class="logo2"></div> -->
+      <div class="class">
+<!-- Adicione um botão de registro na tela de celular -->
+<button id="btnMostrarPopup" class="mobile-only">Registrar</button>
+
+<!-- Defina o pop-up de registro (inicialmente oculto) -->
+<div id="popupCadastro" class="popup">
+  <div class="etapas">
+    <div class="etapa" id="etapa1">
+      <h2>Etapa 1</h2>
+      <!-- Conteúdo da primeira etapa do formulário -->
       <form>
         <label for="nome">Seu nome:</label>
         <input type="text" placeholder="Nome">
@@ -41,61 +46,118 @@
             <input type="radio" id="feminino" name="sexo" value="feminino">
             <label for="feminino">Feminino</label><br><br>
         </div>
+
+      </form>
+      <div id="nav">
+        <p>Já é membro? <a href="#">Faça login</a></p>
+      <button id="proximo1">Próximo</button>
+      </div>
+    </div>
+    
+    <div class="etapa" id="etapa2">
+      <h2>Etapa 2</h2>
+      <!-- Conteúdo da segunda etapa do formulário -->
+      <form>
         <label for="E-mail">Seu E-mail</label>
         <input type="text" placeholder="E-mail" />
         <label for="senha">Sua senha</label>
         <input type="password" placeholder="Senha" />
         <label for="data-nascimento">Data de Nascimento:</label>
         <input type="date" id="data-nascimento" name="data-nascimento" required><br><br>
-        <!-- <label for="comentarios">Comentários:</label>
-        <textarea id="comentarios" name="comentarios" rows="4" cols="50" placeholder="Digite seus comentários aqui"></textarea>
-
-        <label for="sugestoes">Sugestões:</label>
-        <input list="sugestoes" id="sugestoesInput" name="sugestoes" placeholder="Escolha ou digite uma sugestão">
-        <datalist id="sugestoes">
-            <option value="blablabla">
-            <option value="blablabla">
-            <option value="blablabla">
-            <option value="blablabla">
-            <option value="blablabla">
-        </datalist> -->
         <button type="submit">Inscrição</button>
         <label>
           <input type="checkbox" />
           Mantenha-me conectado
         </label>
-        <p>Já é membro? <a href="#">Faça login</a></p>
       </form>
+      <button id="proximo2">Voltar</button>
+    </div>
+  </div>  
+  <button id="btnFecharPopup">Fechar</button>
+</div>
+
+      </div>
     </div>
   </div>
-  <!-- <script>
-window.addEventListener("scroll", function() {
-    var header = document.querySelector(".left-section");
-    var scrollPosition = window.scrollY;
+  <script>
+// window.addEventListener("scroll", function() {
+//     var header = document.querySelector(".left-section");
+//     var scrollPosition = window.scrollY;
   
-    if (scrollPosition > 0) {
-      header.classList.add("shadows");
-    } else {
-      header.classList.remove("shadows");
-    }
-  });
+//     if (scrollPosition > 0) {
+//       header.classList.add("shadows");
+//     } else {
+//       header.classList.remove("shadows");
+//     }
+//   });
 
 
-  const colors = ["#007BFF", "#FF5733", "#39CC86", "#E74C3C", "#9B59B6"];
-let currentIndex = 0;
-const leftSection = document.querySelector('.left-section');
-const verticalNavbar = document.querySelector('.vertical-navbar');
+//   const colors = ["#007BFF", "#FF5733", "#39CC86", "#E74C3C", "#9B59B6"];
+// let currentIndex = 0;
+// const leftSection = document.querySelector('.left-section');
+// const verticalNavbar = document.querySelector('.vertical-navbar');
 
-function changeColor() {
-  const newColor = colors[currentIndex];
-  leftSection.style.background = newColor;
-  verticalNavbar.style.background = newColor;
-  currentIndex = (currentIndex + 1) % colors.length;
+// function changeColor() {
+//   const newColor = colors[currentIndex];
+//   leftSection.style.background = newColor;
+//   verticalNavbar.style.background = newColor;
+//   currentIndex = (currentIndex + 1) % colors.length;
+// }
+
+// setInterval(changeColor, 2000);
+
+function mostrarPopup() {
+  document.getElementById('popupCadastro').style.display = 'block';
 }
 
-setInterval(changeColor, 2000);
+// Função para fechar o pop-up
+function fecharPopup() {
+  document.getElementById('popupCadastro').style.display = 'none';
+}
 
+// Adicione um ouvinte de evento ao botão de registro para mostrar o pop-up
+document.getElementById('btnMostrarPopup').addEventListener('click', mostrarPopup);
 
-  </script> -->
+// Adicione um ouvinte de evento ao botão "Fechar" no pop-up para fechá-lo
+document.getElementById('btnFecharPopup').addEventListener('click', fecharPopup);
+
+// Função para avançar para a próxima etapa
+function proximaEtapa(etapaAtual, proximaEtapa) {
+  document.getElementById(etapaAtual).style.display = 'none';
+  document.getElementById(proximaEtapa).style.display = 'block';
+}
+
+// Botão "Próximo" na primeira etapa
+document.getElementById('proximo1').addEventListener('click', function() {
+  proximaEtapa('etapa1', 'etapa2');
+});
+const leftsection = document.querySelector('.left-section');
+const proximo2 = document.querySelector('proximo2');
+
+// "#007BFF"
+function alterarCor() {
+    var corPredefinida = "#007BFF";
+    leftsection.style.background = corPredefinida;
+    proximo2.style.background = corPredefinida;
+}
+
+var botao = document.getElementById("proximo1");
+botao.addEventListener("click", alterarCor);
+
+function alterarCor2() {
+    var corPredefinida = "linear-gradient(120deg,#0c4786,#007BFF)";
+    leftsection.style.background = corPredefinida;
+}
+
+var botao = document.getElementById("proximo2");
+botao.addEventListener("click", alterarCor2);
+
+// Botão "Enviar" na segunda etapa
+document.getElementById('proximo2').addEventListener('click', function() {
+  proximaEtapa('etapa2', 'etapa1');
+}
+);
+
+  </script>
 </body>
 </html>

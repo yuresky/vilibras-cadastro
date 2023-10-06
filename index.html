@@ -9,31 +9,34 @@
 </head>
 <body>
   <div class="vertical-navbar"></div>
-  <div class="container">
+  <div class="container" id="container">
     <div class="left-section">
       <div class="wave-pattern">
         <div class="intro">
           <h1>VILIBRAS</h1>
           <p class="welcome-message">Seja Bem vindo(a)
             <p id="frase">Somos a <strong>melhor plataforma</strong> de ensino de informática em Língua Brasileira de Sinais</p>
+        <div class="container2">
+          </div>
+          <div class="logo"></div>
+            <img id="foto" class="logo" src="images/Logo VILIBRAS.png" alt="">
+          </div>
         </div>
-        <div class="logo"></div>
-      </div>
     </div>
     <div class="right-section">
       <div class="logo_right-section"></div>
+      <div class="intro2"></div>
       <h1>Cadastro aluno</h1>
-        <!-- <div class="logo2"></div> -->
       <div class="class">
-<!-- Adicione um botão de registro na tela de celular -->
-<button id="btnMostrarPopup" class="mobile-only">Registrar</button>
+<button id="btnMostrarPopup">Registrar</button>
+<button id="btnMostrarPopup2">Fazer Login</button>
+<button id="btnMostrarPopup3">Professor</button>
 
-<!-- Defina o pop-up de registro (inicialmente oculto) -->
+
 <div id="popupCadastro" class="popup">
   <div class="etapas">
     <div class="etapa" id="etapa1">
       <h2>Etapa 1</h2>
-      <!-- Conteúdo da primeira etapa do formulário -->
       <form>
         <label for="nome">Seu nome:</label>
         <input type="text" placeholder="Nome">
@@ -80,32 +83,6 @@
     </div>
   </div>
   <script>
-// window.addEventListener("scroll", function() {
-//     var header = document.querySelector(".left-section");
-//     var scrollPosition = window.scrollY;
-  
-//     if (scrollPosition > 0) {
-//       header.classList.add("shadows");
-//     } else {
-//       header.classList.remove("shadows");
-//     }
-//   });
-
-
-//   const colors = ["#007BFF", "#FF5733", "#39CC86", "#E74C3C", "#9B59B6"];
-// let currentIndex = 0;
-// const leftSection = document.querySelector('.left-section');
-// const verticalNavbar = document.querySelector('.vertical-navbar');
-
-// function changeColor() {
-//   const newColor = colors[currentIndex];
-//   leftSection.style.background = newColor;
-//   verticalNavbar.style.background = newColor;
-//   currentIndex = (currentIndex + 1) % colors.length;
-// }
-
-// setInterval(changeColor, 2000);
-
 function mostrarPopup() {
   document.getElementById('popupCadastro').style.display = 'block';
 }
@@ -114,11 +91,8 @@ function mostrarPopup() {
 function fecharPopup() {
   document.getElementById('popupCadastro').style.display = 'none';
 }
-
-// Adicione um ouvinte de evento ao botão de registro para mostrar o pop-up
 document.getElementById('btnMostrarPopup').addEventListener('click', mostrarPopup);
 
-// Adicione um ouvinte de evento ao botão "Fechar" no pop-up para fechá-lo
 document.getElementById('btnFecharPopup').addEventListener('click', fecharPopup);
 
 // Função para avançar para a próxima etapa
@@ -130,7 +104,17 @@ function proximaEtapa(etapaAtual, proximaEtapa) {
 // Botão "Próximo" na primeira etapa
 document.getElementById('proximo1').addEventListener('click', function() {
   proximaEtapa('etapa1', 'etapa2');
+
+  // Aplicar efeito fadeIn
+  const elementoComEfeito = document.getElementById('container');
+  elementoComEfeito.classList.remove('fade-in-effect');
+  elementoComEfeito.classList.add('fade-in-effect');
+
+  // Aplicar efeito de rotação
+  const foto = document.getElementById('foto');
+  foto.style.transform = 'scale(1) rotate(345deg)';
 });
+
 const leftsection = document.querySelector('.left-section');
 const proximo2 = document.querySelector('proximo2');
 
@@ -142,21 +126,32 @@ function alterarCor() {
 }
 
 var botao = document.getElementById("proximo1");
-botao.addEventListener("click", alterarCor);
+botao.addEventListener("click", alterarCor); 
 
 function alterarCor2() {
     var corPredefinida = "linear-gradient(120deg,#0c4786,#007BFF)";
     leftsection.style.background = corPredefinida;
+    const foto = document.getElementById('foto');
+    foto.style.transform = 'scale(2) rotate(10deg)';
 }
 
 var botao = document.getElementById("proximo2");
 botao.addEventListener("click", alterarCor2);
 
-// Botão "Enviar" na segunda etapa
+
 document.getElementById('proximo2').addEventListener('click', function() {
-  proximaEtapa('etapa2', 'etapa1');
+  proximaEtapa('etapa2', 'etapa1'); 
+  
 }
 );
+
+
+window.addEventListener('load', function () {
+    const foto = document.getElementById('foto');
+    const logo = document.querySelector('.logo');
+
+    foto.style.transform = 'scale(2) rotate(345deg)';
+});
 
   </script>
 </body>

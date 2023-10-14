@@ -42,14 +42,14 @@ body {
   .container {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     overflow-x: hidden;
 
   }
   
   .left-section {
-    flex: 1;
+    flex: 2;
     background: linear-gradient(120deg,var(--cor4),var(--cor));
     position: relative;
     color: white;
@@ -60,9 +60,13 @@ body {
     overflow: hidden;
   }
 
+  .intro{
+    min-height: 85vh;
+  }
+
   .intro h1, .intro p{
     opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
+    animation: fadeIn 2.5s ease-in-out forwards;
   }
 
   p.welcome-message{
@@ -84,7 +88,7 @@ body {
     background-repeat: no-repeat;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.486));
     opacity: 0.7;
-    object-fit: cover;
+    object-fit:scale-down;
     z-index: -1;
   }
   .logo {
@@ -144,7 +148,7 @@ body {
     justify-content: space-between;
     padding: 0px;
     margin: 0px;
-    animation: fadeIn 2s ease-in-out forwards;
+    animation: fadeIn 3s ease-in-out forwards;
 
   }
 
@@ -162,7 +166,7 @@ body {
     flex: 1;
     padding: 40px;
     opacity: 0;
-    animation: fadeIn 2s ease-in-out forwards;
+    animation: fadeIn 3s ease-in-out forwards;
   }
 
   .mobile{
@@ -291,7 +295,7 @@ body {
 
 .fade-in-effect {
   opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 
 

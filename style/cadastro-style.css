@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3498dbc4;
+    background-image: url('../images/aproxime-as-pessoas-aprendendo-juntas.jpg');
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.background-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body:hover{
+    background-blend-mode:luminosity;
+    transition: 3s;
+}
+
+
+.login-container {
+    position: relative;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    box-shadow: 0 0 10px 5px #fff;
+    transition: box-shadow 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+.login-container:hover {
+    box-shadow: 0 0 15px 5px #fff;
+
+}
+
+#foto{
+    max-width: 20vw;
+    position: absolute;
+    top:50px;
+    object-fit:scale-down;
+    transform: scale(0.5) rotate(0deg); 
+    transition: transform 3s ease-in-out; 
+    z-index: -1;
+    opacity: 0.6;
+
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    background-image: url('../images/user_657052.png');
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: monospace;
+    border-right: 4px solid;
+    width: 16ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(16), blinking 1s infinite step-end alternate;
+    margin: 10px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#buttonDiv{
+    padding: 10px;
+    max-width: 300px;
+    margin: 0 auto
+
+}
+.links {
+    margin-top: 20px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+
+@keyframes typing{
+    from{
+      width: 0;
+    }
+  }
+
+  @keyframes blinking{
+    50%{
+      border-color: transparent;
+    }
+  }
+
+  @keyframes fadeIn{
+    0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+  }

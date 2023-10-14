@@ -1,15 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>h</title>
+    <title>Cursor Mágico</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none;
+}
+
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 1s, width 0.2s, height 0.2s;
+}
+
+
+
+    </style>
 </head>
 <body>
-    <div class="imagem-com-degrade">
-        <img src="images/Logo VILIBRAS.png" alt="">
-        <div class="gradiente"></div>
+    <div class="custom-cursor"></div>
+    <div class="content">
+        <h1>Cursor Mágico</h1>
+        <p>Mova o cursor pela tela para ver o efeito mágico.</p>
     </div>
+
+<script>
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+    cursor.style.transition = "none"; // Remover a transição temporariamente
+    cursor.style.transform = "scale(1.5)";
+    setTimeout(() => {
+        cursor.style.transition = "transform 7s, width 0.2s, height 0.2s"; // Restaurar a transição
+        cursor.style.transform = "scale(1)";
+    }, 7000); // Atraso de 1 segundo
+});
+
+</script>
 </body>
 </html>

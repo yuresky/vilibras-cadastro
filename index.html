@@ -120,15 +120,21 @@ document.getElementById('proximo1').addEventListener('click', function() {
 
   // Aplicar efeito fadeIn
   const elementoComEfeito = document.getElementById('container');
-  elementoComEfeito.classList.remove('fade-in-effect');
   elementoComEfeito.classList.add('fade-in-effect');
+
+
+
 
   // Aplicar efeito de rotação
   const foto = document.getElementById('foto');
-  foto.style.transform = 'scale(1) rotate(345deg)';
+  foto.style.transform = 'scale(1.7) rotate(1deg)';
 
   const foto2 = document.getElementById('foto2');
-  foto2.style.transform = 'scale(2) rotate(345deg)';
+  foto2.style.transform = 'scale(2.5) rotate(345deg)';
+
+  setTimeout(function() {
+    elementoComEfeito.classList.remove('fade-in-effect');
+  }, 1000); // Tempo de espera em milissegundos
 });
 
 const leftsection = document.querySelector('.left-section');
@@ -139,6 +145,7 @@ function alterarCor() {
     var corPredefinida = "#007BFF";
     leftsection.style.background = corPredefinida;
     proximo2.style.background = corPredefinida;
+
 }
 
 var botao = document.getElementById("proximo1");
@@ -147,8 +154,6 @@ botao.addEventListener("click", alterarCor);
 function alterarCor2() {
     var corPredefinida = "linear-gradient(120deg,#0c4786,#007BFF)";
     leftsection.style.background = corPredefinida;
-    const foto = document.getElementById('foto');
-    foto.style.transform = 'scale(2) rotate(10deg)';
 }
 
 var botao = document.getElementById("proximo2");
@@ -157,8 +162,16 @@ botao.addEventListener("click", alterarCor2);
 
 document.getElementById('proximo2').addEventListener('click', function() {
   proximaEtapa('etapa2', 'etapa1'); 
+  const foto = document.getElementById('foto');
+    foto.style.transform = 'scale(2.5) rotate(345deg)';
+  const elementoComEfeito = document.getElementById('container');
+    elementoComEfeito.classList.add('fade-in-effect');
+
+  setTimeout(function() {
+    elementoComEfeito.classList.remove('fade-in-effect');
+  }, 1000); // Tempo de espera em milissegundos
+  }
   
-}
 );
 
 
@@ -168,8 +181,8 @@ window.addEventListener('load', function () {
     const foto2 = document.getElementById('foto2');
 
 
-    foto.style.transform = 'scale(2) rotate(345deg)';
-    foto2.style.transform = 'scale(2) rotate(355deg)';
+    foto.style.transform = 'scale(2.5) rotate(345deg)';
+    foto2.style.transform = 'scale(2.5) rotate(355deg)';
 
 });
 

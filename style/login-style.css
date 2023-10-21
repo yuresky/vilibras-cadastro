@@ -2,13 +2,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #3498dbc4;
-    background-image: url('../images/aproxime-as-pessoas-aprendendo-juntas.jpg');
+    background-image: url('../images/69603047_uyfydu4.jpg');
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     color: #fff;
+    transition: 0.7s ease-in-out;
 }
 
 .background-image {
@@ -18,25 +19,30 @@ body {
     height: 100vh;
 }
 
-body:hover{
-    background-blend-mode:luminosity;
-    transition: 3s;
-}
-
 
 .login-container {
+    position: relative;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.547);
     padding: 20px;
     border-radius: 10px;
     border: 2px solid transparent;
-    box-shadow: 0 0 10px 5px #fff;
+    box-shadow: 0 0 10px 5px #0000004b;
     transition: box-shadow 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+
 }
 
-.login-container:hover {
-    box-shadow: 0 0 15px 5px #fff;
-
+#foto{
+    max-width: 20vw;
+    position: absolute;
+    top:50px;
+    object-fit:scale-down;
+    transform: scale(0.5) rotate(0deg); 
+    transition: transform 3s ease-in-out; 
+    z-index: -1;
+    opacity: 0.6;
 }
 
 .avatar {
@@ -58,7 +64,7 @@ h1 {
     width: 16ch;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 2s steps(16), blinking 0.5s infinite step-end alternate;
+    animation: typing 3s steps(16), blinking 1s infinite step-end alternate;
     margin: 10px auto;
 }
 
@@ -69,11 +75,27 @@ form {
     max-width: 300px;
 }
 
+label{
+    margin: 10px 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+}
+
 input {
     padding: 10px;
     margin: 5px 0;
     border: none;
     border-radius: 5px;
+    text-align: center;
+
+}
+
+select{
+    text-align: center;
+    color: gray;
+    padding: 10px;
+    border-radius: 5px;
+
 }
 
 button {
@@ -92,6 +114,7 @@ button {
 
 }
 .links {
+
     margin-top: 20px;
 }
 
@@ -122,3 +145,21 @@ a {
       opacity: 1;
   }
   }
+
+
+@media screen and (max-width:720px){
+    .login-container{
+        height: 100vh;
+        width: 100vw;
+
+    }
+    .avatar{
+        margin-top: 30px;
+    }
+    #foto{
+        display:none
+    }
+    .links{
+        font-size: 11px;
+    }
+}

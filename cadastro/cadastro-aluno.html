@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../style/cadastro-aluno.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script src="../script/script.js"></script>
+    <title>VILIBRAS | Cadastro</title>
+</head>
+<body>
+    <div class="background-image" id="background-image">
+        <div class="login-container" id="login-container">
+            <div class="avatar"></div>
+            <h1>Faça o seu cadastro</h1>
+            <img src="../images/Logo VILIBRAS.png" id="foto" alt="">
+            <form action="processar_cadastro.php" method="post">
+                <input type="text" id="nome" name="nome" placeholder="Informe o seu nome" required>        
+                <input type="text" id="cpf" name="cpf" placeholder="Informe o seu CPF: XXX.XXX.XXX-XX" required>
+                
+                <select id="sexo" name="sexo" required>
+                    <option value="" disabled selected hidden>Selecione o Gênero</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="nao_especificar">Não Especificar</option>
+                </select>
+        
+                <input type="email" id="email" name="email" placeholder="Informe o seu e-mail" required>
+                <input type="password" placeholder="Informe a sua senha" />
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+                <button type="submit" value="Cadastrar">Cadastrar</button>
+            <div id="buttonDiv"></div>
+            </form>
+
+
+            <div class="links">
+                <a href="../login/login.html">Fazer Login</a>
+                <a href="#">|</a>
+                <a href="cadastro-professor.html">Criar conta professor</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

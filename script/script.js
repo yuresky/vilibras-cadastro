@@ -37,4 +37,8 @@ window.addEventListener('load', function() {
     foto.style.transform = 'scale(2) rotate(345deg)';
 });
 
+window.addEventListener("load", function() {
+  document.body.classList.add("blend-effect");
+})
+
   

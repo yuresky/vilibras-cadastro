@@ -39,7 +39,7 @@
 
 }
 
-body {
+body{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -54,7 +54,26 @@ body {
 
   }
   
-  .left-section {
+  #professor{
+    background: url('../images/SL-113022-54210-35.jpg');
+    flex: 2;
+    background-color: #404040;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+    padding: 40px;
+    box-shadow: 3px -1px 9px 0px #e0e1e366;
+    z-index: 2;
+    border-radius: 0px 100px 100px 0px;
+    overflow: hidden;
+    background-blend-mode: darken;
+
+    animation: blendmode 15s ease-in-out infinite; 
+    
+  }
+
+  #aluno {
     flex: 2;
     background-color: #404040;
     /* background: linear-gradient(120deg,var(--cor4),var(--cor)); */
@@ -340,7 +359,7 @@ body {
  
 
 @media screen and (max-width:768px){
-  body{
+  #aluno{
     height: 100%;
     background: url('../images/69603047_uyfydu4.jpg');
     background-blend-mode: hard-light;
@@ -348,6 +367,17 @@ body {
     background-size: cover;
     background-position: center;
   }
+
+  #professor{
+    height: 100%;
+    background: url('../images/SL-113022-54210-35.jpg');
+    background-blend-mode: hard-light;
+    animation: blendmode 15s ease-in-out infinite;
+    background-size: cover;
+    background-position: center;
+  }
+
+
   .logo{
     display: block;
   }

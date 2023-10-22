@@ -15,20 +15,28 @@
 
 ::-webkit-scrollbar {
   width: 12px;
+  animation: blendmode 15s ease-in-out infinite; 
+
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--cor); 
   border-radius: 6px;
+  animation: blendmode 15s ease-in-out infinite; 
+
 }
 
 ::-webkit-scrollbar-track {
   background: var(--cor2);
+  animation: blendmode 15s ease-in-out infinite; 
+
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--cor3);
+  animation: blendmode 15s ease-in-out infinite; 
+
 }
 
 body {
@@ -42,26 +50,32 @@ body {
   .container {
     display: flex;
     flex-wrap: wrap;
-    /* height: 100vh;
-    width: 100vw; */
     overflow-x: hidden;
 
   }
   
   .left-section {
     flex: 2;
-    background: linear-gradient(120deg,var(--cor4),var(--cor));
+    background-color: #404040;
+    /* background: linear-gradient(120deg,var(--cor4),var(--cor)); */
+    background: url('../images/69603047_uyfydu4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     color: white;
     padding: 40px;
     box-shadow: 3px -1px 9px 0px #20446b66;
     z-index: 2;
-    border-radius: 0px 0px 50px 0px;
+    border-radius: 0px 100px 100px 0px;
     overflow: hidden;
+    background-blend-mode: darken;
+
+    animation: blendmode 15s ease-in-out infinite; 
+    
   }
 
   .intro{
-    min-height: 85vh;
+    min-height: 80vh;
   }
 
   .intro h1, .intro p{
@@ -86,7 +100,7 @@ body {
     height: 40%;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.486));
+    filter: drop-shadow(0px 10px 12px black);
     opacity: 0.7;
     object-fit:scale-down;
     z-index: -1;
@@ -121,6 +135,9 @@ body {
     width: 47%;
   }
 
+  button a {
+    text-decoration: none;
+  }
 
   p#frase{
     font-size: 22px;
@@ -149,13 +166,13 @@ body {
     padding: 0px;
     margin: 0px;
     animation: fadeIn 3s ease-in-out forwards;
-
   }
 
   .area-professor button{
     background-color:var(--cor4);
     border-radius: 0%;
     font-size: 16px;
+    color: white;
   }
 
   .area-professor button:hover{
@@ -225,11 +242,12 @@ body {
   a {
     color: var(--cor);
   }
-  
-  .sexo{
-    display: flex;
-    justify-content: space-between;
+
+  select{
+    width: 100%;
+    padding: 10px;
   }
+
   #nav {
     display: flex;
     justify-content: space-between;
@@ -307,11 +325,27 @@ body {
       opacity: 1;
   }
 }
+
+@keyframes blendmode {
+  0% {
+      background-color: #404040;
+  }
+  50% {
+      background-color: #007bff; 
+  }
+  100% {
+      background-color: #404040; 
+  }
+}
  
 
-@media (min-width: 320px) and (max-width: 1200px) {
+@media screen and (max-width:768px){
   body{
     height: 100%;
+    background: url('../images/69603047_uyfydu4.jpg');
+    animation: blendmode 15s ease-in-out infinite;
+    background-size: cover;
+    background-position: center;
   }
   .logo{
     display: block;
@@ -325,24 +359,12 @@ body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    border: 10px inset var(--cor3);
-    border-bottom: 0px;
-    margin-bottom: 0px;
-    padding: 20px;
 
   }
-  .class{
-    margin-top: 0px;
-    border: 10px inset var(--cor);
-    border-top: 0px;
-    padding: 20px;
-    
-  }
-  .h2-mobile{
+  #h2-mobile{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  .h2-mobile strong{
-    color: var(--cor);
+    color: white;
+    margin: 10px;
   }
 
   footer{
@@ -372,8 +394,9 @@ body {
   }
 
   #btnMostrarPopup3{
-    background: white;
-    color: var(--cor);
+    border: 1px solid var(--cor3);
+    color: white;
+    background-color: transparent;
   }
   .etapa {
     display: none;
@@ -384,8 +407,8 @@ body {
   }
   .popup {
     display: none;
-    width: 70%;
-    height: 75%;
+    width: 90%;
+    height: 100%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -399,6 +422,9 @@ body {
   #foto2{
     width: 80px;
     padding: 40px;
+    filter: drop-shadow(0px 10px 12px black);
+    opacity: 0.7;
+    z-index: -1;
   }
 
   form{
@@ -407,140 +433,5 @@ body {
   .left-section{
     display: none;
   }
-
-}
-
-@media (max-width: 320px) {
-  body{
-    height: 100%;
-    overflow: hidden;
-  }
-  .logo{
-    display: block;
-  }
-  .right-section{
-    min-height: 100vh;
-  }
-  .mobile{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    border: 10px inset var(--cor3);
-    border-bottom: 0px;
-    margin-bottom: 0px;
-    padding: 20px;
-
-  }
-  .class{
-    margin-top: 0px;
-    border: 10px inset var(--cor);
-    border-top: 0px;
-    padding: 20px;
-    
-  }
-  .h2-mobile{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  .h2-mobile strong{
-    color: var(--cor);
-  }
-
-  footer{
-    display: flex;
-  }
-
-
-  .logo_right-section{
-    position: relative;
-    height: 40%;
-    top: 5%;
-    background-image: url(../images/Logo\ VILIBRAS.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  #btnMostrarPopup, #btnMostrarPopup2, #btnMostrarPopup3 {
-    display: block;
-    border-radius: 10px;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  #btnMostrarPopup2{
-    background: white;
-    border: 1px solid var(--cor3);
-    color: var(--cor3);
-  }
-
-  #btnMostrarPopup3{
-    background: white;
-    color: var(--cor);
-  }
-  .etapa {
-    display: none;
-  }
-
-  #etapa1 {
-    display: block;
-  }
- .popup {
-    display: none;
-    width: 85%;
-    height: 100%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px inset var(--cor);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  } 
-
-  #foto2{
-    width: 60px;
-    padding: 40px;
-  }
-
-  form{
-    overflow: hidden;
-  }
-  .left-section{
-    display: none;
-  }
-
-}
-
-@media (min-width:600px) and (max-width:900px){
-  *{
-    font-size: 25px;
-  }
-  body{
-    overflow-x: hidden;
-  }
-
-  .popup {
-    display: none;
-    width: 85%;
-    height: 65%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px inset var(--cor);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#foto2{
-  width: 100px;
-  padding: 40px;
-}
-
-label,p{
-  font-size: 30px;
-}
 
 }

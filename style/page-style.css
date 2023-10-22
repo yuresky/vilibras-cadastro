@@ -343,6 +343,7 @@ body {
   body{
     height: 100%;
     background: url('../images/69603047_uyfydu4.jpg');
+    background-blend-mode: hard-light;
     animation: blendmode 15s ease-in-out infinite;
     background-size: cover;
     background-position: center;
@@ -397,6 +398,9 @@ body {
     border: 1px solid var(--cor3);
     color: white;
     background-color: transparent;
+  }
+  .etapas{
+    margin: 30px;
   }
   .etapa {
     display: none;

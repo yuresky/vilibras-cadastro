@@ -54,7 +54,7 @@ body{
 
   }
   
-  #professor{
+  #left-professor{
     background: url('../images/SL-113022-54210-35.jpg');
     flex: 2;
     background-color: #404040;
@@ -73,7 +73,7 @@ body{
     
   }
 
-  #aluno {
+  #left-aluno {
     flex: 2;
     background-color: #404040;
     /* background: linear-gradient(120deg,var(--cor4),var(--cor)); */

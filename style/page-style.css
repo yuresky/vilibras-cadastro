@@ -55,7 +55,7 @@ body{
   }
   
   #left-professor{
-    background: url('../images/SL-113022-54210-35.jpg');
+    background: url('../images/Wavy Elegant Lines Navy Background.jpg');
     flex: 2;
     background-color: #404040;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@ body{
     z-index: 2;
     border-radius: 0px 100px 100px 0px;
     overflow: hidden;
-    background-blend-mode: darken;
+    background-blend-mode: luminosity;
 
     animation: blendmode 15s ease-in-out infinite; 
     
@@ -94,7 +94,7 @@ body{
   }
 
   .intro{
-    min-height: 80vh;
+    min-height: 85vh;
   }
 
   .intro h1, .intro p{
@@ -370,9 +370,9 @@ body{
 
   #professor{
     height: 100%;
-    background: url('../images/SL-113022-54210-35.jpg');
-    background-blend-mode: hard-light;
-    animation: blendmode 15s ease-in-out infinite;
+    background: url('../images/Wavy\ Elegant\ Lines\ Navy\ Background.jpg');
+    background-blend-mode: luminosity;
+    animation: blendmode 15s ease-in-out infinite alternate;
     background-size: cover;
     background-position: center;
   }

@@ -6,12 +6,12 @@
     <link rel="shortcut icon" href="IMG/Logo VILIBRAS.png" type="image/x-icon">
     <link rel="stylesheet" href="./CSS/cadastro.css">
     <!--  passar o js para ca <script src="../script/script-cadastro.js"></script> -->
-    <title>Cadastro - Aluno | VILIBRAS</title>
+    <title>Cadastro - Professor | VILIBRAS</title>
 </head>
-<body id="aluno">
+<body id="professor">
   <div class="vertical-navbar"></div>
   <div class="container" id="container">
-    <div class="left-section" id="left-aluno">
+    <div class="left-section" id="left-professor">
       <div class="wave-pattern">
         <div class="intro">
           <h1>VILIBRAS</h1>
@@ -23,8 +23,8 @@
             <img id="foto" class="logo" src="./IMG/Logo VILIBRAS.png" alt="">
           </div>
             <div class="area-professor">
-              <h2>Você é <strong>professor?</strong></h2>
-              <button><a href="./cadastro-professor.html">Cadastro Professor</a></button>
+              <h2>Você é <strong>aluno?</strong></h2>
+              <button><a href="./cadastro-aluno.html">Cadastro Aluno</a></button>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
       <div class="class">
         <button id="btnMostrarPopup">Registrar</button>
         <button id="btnMostrarPopup2"><a href="./login.html">Fazer Login</a></button>
-        <button id="btnMostrarPopup3"><a href="./cadastro-professor.html">Professor</a></button>
+        <button id="btnMostrarPopup3"><a href="./cadastro-aluno.html">Aluno</a></button>
       </div>
 
 <div id="popupCadastro" class="popup">
@@ -88,7 +88,7 @@
       </div>
     </div>
   </div>
-  
+
   <footer></footer>
 
   <script>
@@ -110,8 +110,6 @@
     document.getElementById(proximaEtapa).style.display = 'block';
   }
   
-
-  
   // Botão "Próximo" na primeira etapa
   document.getElementById('proximo1').addEventListener('click', function() {
     proximaEtapa('etapa1', 'etapa2');
@@ -119,6 +117,8 @@
     // Aplicar efeito fadeIn
     const elementoComEfeito = document.getElementById('container');
     elementoComEfeito.classList.add('fade-in-effect');
+  
+  
   
   
     // Aplicar efeito de rotação
@@ -133,12 +133,12 @@
     }, 1000); // Tempo de espera em milissegundos
   });
   
-  const leftsection = document.querySelector('.left-section');
+  const leftsection = document.querySelector('.left-professor');
   const proximo2 = document.querySelector('proximo2');
   
   // "#007BFF"
   function alterarCor() {
-      var corPredefinida = "url ('../IMG/69603047_uyfydu4.jpg')";
+      var corPredefinida = "url ('../IMG/Wavy Elegant Lines Navy Background.jpg')";
       leftsection.style.background = corPredefinida;
       proximo2.style.background = corPredefinida;
   

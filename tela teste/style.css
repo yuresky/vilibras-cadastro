@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+header,nav, ul, li, a{
+    display: flex;
+    text-decoration: none;
+}
+header{
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+}
+
+li{
+    padding: 30px;
+}
+
+section{
+    display: flex;
+    align-items: center;
+}
+
+#texto{
+    width: 800px;
+}
+
+.image{
+    background: url(../IMG/Logo\ VILIBRAS.png);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+
+}

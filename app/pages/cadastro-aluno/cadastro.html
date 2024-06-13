@@ -249,7 +249,86 @@
 
             document.addEventListener("touchstart", activateButton);
             document.addEventListener("touchend", hideMenuPopup);
+            let timeoutId;
+    const menuPopup = document.getElementById('menuPopup');
+    const items = menuPopup.querySelectorAll('li');
+    let selectedItemIndex = -1;
+
+    function showMobilePopup(event) {
+        if (window.innerWidth <= 768) {
+            menuPopup.style.display = 'block';
+            menuPopup.style.top = `${event.touches ? event.touches[0].clientY : event.clientY}px`;
+            menuPopup.style.left = `${event.touches ? event.touches[0].clientX : event.clientX}px`;
+
+            if (navigator.vibrate) {
+                navigator.vibrate(100);
+            }
+        }
+    }
+
+    function hideMobilePopup() {
+        menuPopup.style.display = 'none';
+        selectedItemIndex = -1;
+        items.forEach(item => item.classList.remove('selected'));
+    }
+
+    // Função para selecionar item com base na posição do toque
+    function selectItem(event) {
+        const y = event.touches ? event.touches[0].clientY : event.clientY;
+        items.forEach((item, index) => {
+            const rect = item.getBoundingClientRect();
+            if (y >= rect.top && y <= rect.bottom) {
+                items.forEach(i => i.classList.remove('selected'));
+                item.classList.add('selected');
+                selectedItemIndex = index;
+            }
         });
+    }
+
+    function openSelectedItem() {
+        if (selectedItemIndex >= 0 && selectedItemIndex < items.length) {
+            const link = items[selectedItemIndex].querySelector('a').href;
+            window.location.href = link;
+        }
+    }
+
+    document.addEventListener('touchstart', function(event) {
+        timeoutId = setTimeout(() => showMobilePopup(event), 1000);
+    });
+
+    document.addEventListener('touchmove', function(event) {
+        selectItem(event);
+    });
+
+    document.addEventListener('touchend', function(event) {
+        clearTimeout(timeoutId);
+        openSelectedItem();
+    });
+
+    document.addEventListener('mousedown', function(event) {
+        if (window.innerWidth <= 768) { 
+            timeoutId = setTimeout(() => showMobilePopup(event), 1000);
+        }
+    });
+
+    document.addEventListener('mousemove', function(event) {
+        if (window.innerWidth <= 768 && timeoutId) {
+            selectItem(event);
+        }
+    });
+
+    document.addEventListener('mouseup', function(event) {
+        clearTimeout(timeoutId);
+        openSelectedItem();
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!menuPopup.contains(event.target)) {
+            hideMobilePopup();
+        }
+    });
+        });
+        
     </script>
 </body>
 </html>

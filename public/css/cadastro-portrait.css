@@ -71,3 +71,17 @@ form {
     display: none;
 }
 
+#sidebar-hero h2{
+    left: 15%;
+    top: 15%;
+}
+
+
+#sidebar-hero h2::before{
+    left: 40%;
+}
+
+#assistent-bar-img{
+    top: 30%;
+    right: 40%;
+}

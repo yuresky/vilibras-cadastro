@@ -85,3 +85,40 @@ form {
     top: 30%;
     right: 40%;
 }
+
+#keyboard-gif{
+    display: none;
+}
+
+#sidebar-info img{
+    left: 20%;
+    top: 50%;
+    width: 300px;
+}
+
+#text-sidebar-portrait{
+    top: 50%;
+    font-size: 1.5em;
+}
+
+#text-sidebar2{
+    display: none;
+}
+
+input{
+    padding: 0.7em;
+}
+
+label::before{
+    content: "";
+    display: inline-flex;
+    background: white;
+    width: 5px;
+    height: 10px;
+    margin: 5px;
+
+}
+
+button{
+    padding: 0.8em;
+}

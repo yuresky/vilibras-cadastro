@@ -34,11 +34,11 @@
             <div class="forms">
                 <form action="#" method="post">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required tabindex="1">
+                    <input type="text" id="nome" name="nome"  placeholder="Nome:" required tabindex="1">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required tabindex="2">
+                    <input type="email" id="email" name="email" placeholder="Email"  required tabindex="2">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required tabindex="3">
+                    <input type="password" id="senha" name="senha" placeholder="Senha"  required tabindex="3">
                     <button type="submit" tabindex="4">Cadastrar</button>
                 </form>
             </div>
@@ -51,12 +51,8 @@
                     <span id="help-text">Ajuda</span>
                 </a>
                   
-                <a id="vilibras-a-c" href="#">Vilibras Copyright</a>
-                <a href="#"><img id="github-a" src="../../../public/images/github_733609.png" alt=""></a>
-            </div>
+                <a id="vilibras-a-c" href="#">Vilibras</a>
 
-            <div class="cta">
-                <a href="#">dimlib.projeto@gmail.com</a>
             </div>
         </div>
     </div>
@@ -89,7 +85,9 @@
                 <p id="text-sidebar">Utilize as teclas do teclado para te ajudar!</p>
                 <p id="text-sidebar2">Utilize o TAB ou SHIFT + TAB para navegar no formulário.</p>
                 <p id="text-sidebar-portrait">toque e segure em qualquer canto da página para ativar o menú flutuante!</p>
-                <img src="../../../public/images/blocks_6302471.png" alt="">
+                <img id="keyboard-gif" src="../../../public/images/animated-keyboard.gif" alt="">
+                <img id="screen-gif" src="../../../public/images/animate-screen-phone.gif" alt="">
+
             </div>
         </div>
     </div>
@@ -208,7 +206,7 @@
             function resetTimer() {
                 if (!popupVisible) {
                     clearTimeout(timeout);
-                    timeout = setTimeout(showPopup, 5000);
+                    timeout = setTimeout(showPopup, 50000);
                 }
             }
 
@@ -220,7 +218,7 @@
             document.onmousemove = resetTimer;
             document.onkeypress = resetTimer;
 
-            timeout = setTimeout(showPopup, 5000);
+            timeout = setTimeout(showPopup, 50000);
 
             let timeoutPopup;
             let menuPopupVisible = false;
@@ -238,7 +236,7 @@
             function resetMenuTimer() {
                 clearTimeout(timeoutPopup);
                 if (menuPopupVisible) return;
-                timeoutPopup = setTimeout(showMenuPopup, 2000);
+                timeoutPopup = setTimeout(showMenuPopup, 20000);
             }
 
             function activateButton(e) {

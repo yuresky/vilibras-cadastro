@@ -94,16 +94,17 @@
     <script>
         // Definindo a função globalmente
         function toggleSidebar() {
-            console.log('Toggle Sidebar function called');
             const sidebar = document.getElementById('sidebar');
             const body = document.body;
 
             if (sidebar.classList.contains('show')) {
                 sidebar.classList.remove('show');
                 body.classList.remove('sidebar-visible');
+
             } else {
                 sidebar.classList.add('show');
                 body.classList.add('sidebar-visible');
+
             }
         }
 

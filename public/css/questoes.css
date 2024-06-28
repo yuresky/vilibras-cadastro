@@ -47,6 +47,7 @@ main {
 }
 
 .questoes {
+    border-radius: 10px 10px 0 0;
     height: auto;
     width: 80vw;
     color: var(--text);
@@ -55,28 +56,27 @@ main {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    border-bottom: 1px solid var(--section-line);
+    /* margin: 20px; */
+    border-bottom: 1px solid var(--text-gray);
 }
 
-.text-question h1 {
-    font-size: 14pt;
-    font-weight: 400;
-    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #ffffff;
+.text-question {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--text-gray);
 }
 
 .informations {
     display: flex;
-    font-size: 14pt;
+    font-size: 10pt;
+    flex-wrap: wrap;
     font-weight: 400;
     padding-bottom: 30px;
     justify-content: flex;
-    color: var(--text);
+    color: var(--text-gray);
     gap: 5px;
-    border-bottom: 1px solid var(--text);
 }
 
 .quiz {
@@ -84,9 +84,11 @@ main {
 }
 
 .enunciado {
+    font-size: 13pt;
+    letter-spacing: -.5px;
     padding: 5px 0 5px 0;
-    padding-bottom: 40px;
-    font-size: 16pt;
+    padding-bottom: 20px;
+    text-align: justify;
     font-weight: 300;
     color: var(--text);
 }
@@ -95,53 +97,67 @@ main {
     gap: 10px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
-    border: 1px solid var(--bg-questoes);
+    /* border: 1px solid var(--bg-questoes); */
 }
 
 .answer {
-    gap: 10px;
     display: flex;
     align-items: center;
 }
 
 .btn {
+    letter-spacing: -.5px;
     background: var(--bg-questoes);
     color: var(--text);
     font-weight: 400;
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     border-radius: 10px;
-    border: 1px solid var(--bg-questoes);
+    border: none;
+    /* border: 1px solid var(--bg-questoes); */
     margin: 10px 0 10px 0;
     cursor: pointer;
-    text-align: left;
+    text-align: justify;
     transition: all .3s;
     box-sizing: border-box;
     font-size: 12pt;
 }
 
 .btn:hover {
-    border: 1px solid #777777;
+    /* border: 1px solid #777777; */
+    background: #afafaf;
 }
 
-#acertou {
-    border: 1px solid #00d05a;
+.check {
+    font-size: 20px;
+    display: block;
+    color: transparent;
+    /* color: var(--bg-questoes); */
 }
 
-/* #next-btn {
-    background-image: linear-gradient(to right bottom, #031926, #04215b, #009dff);
-    color: #fff;
-    border: none;
-    font-weight: 600;
-    width: 150px;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 30px auto 0;
-    cursor: pointer;
-    display: none;
-} */
+.is-correct{
+    font-size: 14pt;
+    color: #e9af00;
+}
+.is-right{
+    font-size: 14pt;
+    color: #00d05a;
+}
+
+
+.desativado {
+    cursor:auto;
+    pointer-events: none;
+}
+
+.acertou {
+    color: #00d05a;
+}
+.errou {
+    color: #e9af00;
+}
 
 .correct {
     background: #00d05a;

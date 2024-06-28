@@ -3,11 +3,12 @@ require_once("../base/cabecalho.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/aulas.css">
-
+<link rel="stylesheet" href="../../../public/css/aulas-portrait.css" media="screen and (orientation: portrait)">
 <main>
   <body>
     <div class="container">
       <div class="left-side">
+        <div id="clip-pth"></div>
         <h1>VIDEO<br><div id="text-h1">AULAS</div></h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt assumenda velit voluptates officiis soluta omnis distinctio repellat eveniet officia quod? Tempore ipsa nihil vel magni culpa atque eveniet veniam quisquam!</p>
         <div class="buttons">
@@ -17,12 +18,13 @@ require_once("../base/cabecalho.php");
       </div>
       <div class="right-side">
         <div class="video-grid">
-          <div class="video-item">
+          <div class="video-item video-border">
             <video autoplay muted loop>
               <source src="../../../public/images/1118342_Macro_Pattern_1280x720.mp4" type="video/mp4">
             </video>
           </div>
-          <div class="video-item" id="video2">
+          
+          <div class="video-item">
             <video autoplay muted loop>
               <source src="../../../public/images/1118345_Macro_4k_1280x720.mp4" type="video/mp4">
             </video>
@@ -33,13 +35,13 @@ require_once("../base/cabecalho.php");
                 <source src="../../../public/images/1118342_Macro_Pattern_1280x720.mp4" type="video/mp4">
               </video>
             </div>
-            <div class="video-item">
+            <div class="video-item video-border">
               <video autoplay muted loop>
                 <source src="../../../public/images/1118345_Macro_4k_1280x720.mp4" type="video/mp4">
               </video>
             </div>
             <div class="video-grid">
-              <div class="video-item">
+              <div class="video-item video-border">
                 <video autoplay muted loop>
                   <source src="../../../public/images/1118342_Macro_Pattern_1280x720.mp4" type="video/mp4">
                 </video>
@@ -55,7 +57,7 @@ require_once("../base/cabecalho.php");
                     <source src="../../../public/images/1118342_Macro_Pattern_1280x720.mp4" type="video/mp4">
                   </video>
                 </div>
-                <div class="video-item">
+                <div class="video-item video-border">
                   <video autoplay muted loop>
                     <source src="../../../public/images/1118345_Macro_4k_1280x720.mp4" type="video/mp4">
                   </video>
@@ -66,9 +68,23 @@ require_once("../base/cabecalho.php");
         </div>
       </div>
       <img id="logo" src="../../../public/images/Logo.png" alt="">
+      <div class="wrapper">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+        <div class="item item7"></div>
+        <div class="item item8"></div>
+      </div>
       <div id="right-bar"></div>
+      <div id="scr-btn"></div>
     </div>
     <section id="target-section">
+      <h2>Conheça algumas das vídeo-aulas</h2>
+      <button id="exit-btn">Fechar</button>
+      <div class="search-bar">Pesquisar video-aula</div>
       <div id="videos">
         <img src="../../../public/images/69603047_uyfydu4.jpg" alt="">
         <img src="../../../public/images/69603047_uyfydu4.jpg" alt="">
@@ -88,52 +104,28 @@ require_once("../base/cabecalho.php");
         </div>
       </div>
     </section>
+
     <script>
-      let lastScrollTop = 0;
-      let isTransitioning = false;
+document.addEventListener("DOMContentLoaded", function() {
+  var scrBtn = document.getElementById("scr-btn");
+  var exitBtn = document.getElementById("exit-btn");
+  var targetSection = document.getElementById("target-section");
 
-      window.addEventListener('scroll', function() {
-        if (isTransitioning) return;
+  scrBtn.addEventListener("click", function() {
+    targetSection.classList.add("fullscreen");
+    targetSection.classList.add("slide-in");
+    targetSection.classList.remove("slide-out");
+  });
 
-        const scrollPosition = window.scrollY;
-        const section = document.getElementById('target-section');
-        const sectionTop = section.offsetTop;
-        const body = document.body;
+  exitBtn.addEventListener("click", function() {
+    targetSection.classList.add("slide-out");
+    targetSection.classList.remove("slide-in");
+    setTimeout(function() {
+      targetSection.classList.remove("fullscreen");
+    }, 500); // Tempo deve ser igual à duração da animação
+  });
+});
 
-        if (scrollPosition > lastScrollTop && scrollPosition > 100 && scrollPosition < sectionTop - 50) {
-          isTransitioning = true;
-          window.scrollTo({
-            top: sectionTop,
-            behavior: 'smooth'
-          });
-
-          body.style.transition = 'background-color 1s';
-          body.style.backgroundColor = '#fff';
-          body.style.color = '#000';
-
-
-          setTimeout(() => {
-            isTransitioning = false;
-          }, 1000);
-        } else if (scrollPosition < lastScrollTop && scrollPosition <= sectionTop) {
-          isTransitioning = true;
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-
-          body.style.transition = 'background-color 1s';
-          body.style.backgroundColor = '#000';
-          body.style.color = '#fff';
-
-
-          setTimeout(() => {
-            isTransitioning = false;
-          }, 1000);
-        }
-
-        lastScrollTop = scrollPosition;
-      });
     </script>
   </body>
 </main>

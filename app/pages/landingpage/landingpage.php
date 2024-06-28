@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (isset($_SESSION['login'])) {
+    header("Location: ../dashboard/dashboard.php");
+    exit();
+}?>
+
+
+<?php
 require_once("../base/cabecalho.php");
 ?>
 
@@ -146,7 +155,7 @@ require_once("../base/cabecalho.php");
                         <a href="../cadastro-aluno/cadastro-aluno.php">Cadastre-se</a>
                     </div>
                     <div class="button">
-                        <a href="../login/login.php">Login</a>
+                        <a href="../login/login.php">Entrar</a>
                     </div>
                 </div>
             </div>

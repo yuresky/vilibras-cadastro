@@ -170,6 +170,7 @@ header {
 }
 
 .menu-user {
+	cursor: pointer;
 	padding: 0 10px 0 10px;
 	display: flex;
 	align-items: center;
@@ -492,7 +493,7 @@ footer a:hover {
 	transition: all .2s linear;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 579px) {
 	footer {
 		justify-content: center;
 		padding: 2rem;
@@ -593,6 +594,7 @@ footer a:hover {
 	--title-3: rgb(0, 187, 255);
 	--links-principal: #031926;
 	--text: #000;
+	--text-gray: #898989;
 	--section-bg: #fff;
 	--section-especial-bg: #d5def6ff;
 	--section-line: #031926;
@@ -608,6 +610,8 @@ footer a:hover {
 	--perfil-datas: #eeeeee;
 	--perfil-text: #333;
 	--bg-questoes: #f2f6fc;
+	--bg-calendar: #e9e9e9;
+	--bg-faq: transparent;
 
 }
 
@@ -618,6 +622,7 @@ footer a:hover {
 	--title-3: rgb(157, 229, 255);
 	--links-principal: #fff;
 	--text: #f2f6fc;
+	--text-gray: #fff;
 	--section-bg: #111111;
 	--section-especial-bg: #000000;
 	--section-line: #76c5f3;
@@ -633,4 +638,7 @@ footer a:hover {
 	--perfil-datas: #252525;
 	--perfil-text: #dcdcdc;
 	--bg-questoes: #434343;
+	--bg-calendar: #000000;
+	--bg-faq: #000;
+
 }

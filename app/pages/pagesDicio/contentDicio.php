@@ -1,6 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+session_start();
 
+// se não tiver logado, vai para o login
+if (!isset($_SESSION['login'])) {
+    header("Location: ../usuario/login.php?");
+    exit();
+}?>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +17,10 @@
 
     <link rel="icon" href="../../../public/images/Logo.png">
 
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <link rel="stylesheet" href="../../../public/css/base.css">
-    <script src="../../../public/js/base.js" type="text/javascript" defer></script>
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../../../public/css/contentDicio.css">
 </head>
 
 <body>
@@ -23,30 +28,32 @@
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+          <div class="vw-plugin-top-wrapper"></div>
         </div>
-    </div>
+        </div>
 
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+      </script>
+
     <header>
         <div class="menu-top">
             <div class="logo">
-                <a href="../../pages/dashboard/dashboard.php"><img src="../../../public/images/Logo.png" alt=""></a>
-                <a id="logoname" href="../../pages/dashboard/dashboard.php">VILIBRAS</a>
+                <a href="#"><img src="../../../public/images/Logo.png" alt=""></a>
+                <a id="logoname" href="#">VILIBRAS</a>
             </div>
 
             <div id="menu-top" class="menu-right">
-                <?php if (isset($_SESSION['login'])): ?>
                 <div id="search-box" class="search-box">
-                    <input id="search" type="text" class="search-text" placeholder="Pesquisar...">
+                <select id="search" class="search-text">
+                    
+                </select>
+                
                     <a class="search-btn" href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>
-                <?php endif; ?>
                 <label class="container-box">
                     <input id="checkbox" checked="checked" type="checkbox">
                     <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
@@ -60,26 +67,22 @@
                         </path>
                     </svg>
                 </label>
-                <?php if (!isset($_SESSION['login'])): ?>
                 <div class="login">
-                <a href="../usuario/login.php">Entrar</a>
+                <a href="Dashboard">Login</a>
                 </div>
-                <?php endif; ?>
-
-                <?php if (isset($_SESSION['login'])): ?>
                 <div class="menu-user">
                     <ul class="dropdown-menu">
                         <li>
                             <i id="menu-icon" class="fa-solid fa-user"></i>
                             <ul class="dropdown">
                                 <li>
-                                    <p>Olá, <?php echo htmlspecialchars($_SESSION['login']) ?></p>
+                                    <p>Olá, </p>
                                 </li>
-                                <li><a href="../perfil/perfil.php">
+                                <li><a href="#">
                                         <span><i class="fa-solid fa-house"></i></span>
                                         <span>Acessar Conta</span>
                                     </a></li>
-                                <li><a id="sair" href="../../actions/usuario/logoutUsuario.php">
+                                <li><a id="sair" href="#">
                                         <span><i class="fa-solid fa-right-from-bracket"></i></span>
                                         <span>Sair</span>
                                     </a></li>
@@ -87,18 +90,36 @@
                         </li>
                     </ul>
                 </div>
-                <?php endif; ?>
                 <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
         <div id="menu-bottom" class="menu-bottom">
             <div id="menu">
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-                <a class="b-link" href="../dashboard/dashboard.php">Home</a> <!--aparecer se for autenticado-->
-                <a class="b-link" href="../questoes/questoes.php">Questões</a>
-                <a class="b-link" href="../aulas/aulas.php">Aulas</a>
-                <a class="b-link" href="../dicionario/dicionario.php">Dicionário</a>
-                <a class="b-link" href="../faq/faq.php">FAQ</a>
+                <a class="b-link" href="../dicionario/dicionario.php?categoria=<?php echo $_GET['categoria']?>">Dicionário</a> <!--aparecer se for autenticado-->
+                <a class="b-link" href="contentDicio.php?categoria=hardware">Hardware</a>
+                <a class="b-link" href="contentDicio.php?categoria=software">Software</a>
+                <a class="b-link" href="contentDicio.php?categoria=conectividades">Conectividades</a>
+                <a class="b-link" href="contentDicio.php?categoria=armazenamento_dados">Armazenamento de Dados</a>
             </div>
         </div>
     </header>
+
+<main>
+
+        <div class="Dictionary-Content">
+            
+        </div>
+
+</main>
+
+
+<script src="../../../public/js/contentDicio.js"></script>
+    
+<?php
+require_once("../base/footer.php");
+require_once("../../actions/dicionario/visualizarVideos.php");
+?>
+
+</body>
+</html>

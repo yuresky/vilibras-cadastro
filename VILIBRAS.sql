@@ -1,3 +1,4 @@
+"""
 DROP DATABASE VILIBRAS;
 
 CREATE DATABASE VILIBRAS;
@@ -20,10 +21,17 @@ sexo VARCHAR(10) NOT NULL,
 e_mail VARCHAR(40) NOT NULL,
 nome VARCHAR(40) NOT NULL);
 
-CREATE TABLE acertou_questao (
-	id_acertou INT PRIMARY KEY AUTO_INCREMENT,
-	acertou BOOLEAN DEFAULT false
+CREATE TABLE usuario(
+id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(100) NOT NULL,
+senha VARCHAR(20) NOT NULL,
+nome VARCHAR(100) NOT null
+);
 
+CREATE TABLE IF NOT EXISTS acertou_questao (
+	id_acertou INT PRIMARY KEY AUTO_INCREMENT,
+	acertou VARCHAR(20) NOT NULL,
+	id_questao INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS questoes (
@@ -48,10 +56,46 @@ tipo_desafio VARCHAR(40) NOT NULL,
 conteudo VARCHAR(50) NOT NULL);
 
 CREATE TABLE dicionario_sinais(
-id_dicio TEXT PRIMARY KEY,
+id_dicio VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 iframe TEXT NOT NULL,
 descricao TEXT NOT NULL);
+
+CREATE TABLE hardware(
+id_hardware VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
+
+CREATE TABLE software(
+id_software VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
+
+CREATE TABLE conectividades(
+id_conectividades VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
+
+CREATE TABLE armazenamento_dados(
+id_armazenamento_dados VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
 
 CREATE TABLE tipo_material(
 id_tipo INT PRIMARY KEY AUTO_INCREMENT,
@@ -64,7 +108,7 @@ texto VARCHAR(200) NOT NULL);
 CREATE TABLE material(
 id_material INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(40) NOT NULL,
-id_dicio INT,
+id_dicio VARCHAR(50),
 FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
 CREATE TABLE insere_materais(
@@ -76,7 +120,7 @@ FOREIGN KEY (id_prof) REFERENCES professores(id_prof));
 
 CREATE TABLE acessa_dicio_prof(
 id_prof INT,
-id_dicio INT, 
+id_dicio VARCHAR(50), 
 PRIMARY KEY (id_prof,id_dicio),
 FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio),
 FOREIGN KEY (id_prof) REFERENCES professores(id_prof));
@@ -89,7 +133,7 @@ FOREIGN KEY (id_material) REFERENCES material (id_material),
 FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno));
 
 CREATE TABLE acessa_dicio_aluno(
-id_dicio INT,
+id_dicio VARCHAR(50),
 id_aluno INT,
 PRIMARY KEY(id_dicio,id_aluno),
 FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
@@ -164,4 +208,5 @@ CREATE TABLE telefone_ADM(
 telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
 telefone VARCHAR (10) NOT NULL,
 id_adm_FK INT,
-FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));
+FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));usuario
+"""

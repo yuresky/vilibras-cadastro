@@ -207,6 +207,7 @@ section p{
     text-align: justify;
     background: linear-gradient(45deg, white, #c3c3c3);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: system-ui;
     font-weight: 400;

@@ -243,6 +243,16 @@
 				delay: (el, i) => 9400 + 40 * i,
 			});
 
+			anime.timeline().add({
+				targets: ".wrapper",
+				opacity: [0, 1],
+				translateY: [80, 0],
+				translateZ: 0,
+				easing: "easeOutExpo",
+				duration: 8000,
+				delay: (el, i) => 9400 + 40 * i,
+			});
+
 			setTimeout(() => {
             document.getElementById('target-section').style.display = 'block';
         }, 9000);

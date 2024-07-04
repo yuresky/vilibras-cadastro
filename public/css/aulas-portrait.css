@@ -135,9 +135,9 @@ h1::before{
     border-radius: 50%;
     background: #008bb0;
     z-index: 100;
-    position: relative;
-    top: 49em;
-    right: 48%;
+    position: absolute;
+    top: 95em;
+    right: -10%;
     margin: 0;
     padding: 0;
 }
@@ -168,7 +168,7 @@ h1::before{
         rgba(0, 0, 0, 0)
     );
     display: block;
-    top: 75em;
+    top: 80em;
     left: 50%;
 }
 
@@ -221,4 +221,8 @@ h1::before{
 
 .item8 {
   animation-delay: calc(30s / 8 * (8 - 8) * -1);
+}
+
+.title h1{
+	font-size: 40px !important;
 }

@@ -215,6 +215,7 @@ li.block {
   #scr-btn, #exit-btn, .wrapper{
 	display: none;
   }
+
   
   .video-grid {
 	display: grid;

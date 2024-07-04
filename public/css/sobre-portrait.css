@@ -7,14 +7,13 @@
     justify-content: space-between;
 }
 
-#home-icon{
+#home-icon, .options{
     filter: none !important;
     width: 30px;
 }
 
 #gif{
-    width: 30vw !important;
-    height: 45vh !important;
+    width: 15vw !important;
     top: 40% !important;
 }
 
@@ -61,7 +60,7 @@ section p{
 }
 
 footer{
-    background: linear-gradient(45deg, #1e1e1e, black, #1e1e1e);
+    background: linear-gradient(45deg, #505050, black, #505050);
     margin-top: 20px;
     display: flex;
     flex-direction: column-reverse;

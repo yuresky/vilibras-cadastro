@@ -80,9 +80,9 @@
 				  
 				  
 			<div class="titles">
-				<div class="title title-1"><h1>Make</h1></div>
-				<div class="title title-2"><h1>A</h1></div>
-				<div class="title title-3"><h1>Difference</h1></div>
+				<div class="title title-1"><h1> Conheça</h1></div>
+				<div class="title title-2"><h1>as</h1></div>
+				<div class="title title-3"><h1>videoaulas</h1></div>
 			</div>
 			<ul class="blocks">
 				<li class="block-1 block"></li>
@@ -91,6 +91,7 @@
 				<li class="block-4 block"></li>
 				<li class="block-5 block"></li>
 				<li class="block-6 block"></li>
+				
 			</ul>
 		</div>
 
@@ -245,6 +246,27 @@
 			setTimeout(() => {
             document.getElementById('target-section').style.display = 'block';
         }, 9000);
+
+		document.addEventListener("DOMContentLoaded", function() {
+  var scrBtn = document.getElementById("scr-btn");
+  var exitBtn = document.getElementById("exit-btn");
+  var targetSection = document.getElementById("target-section");
+
+  scrBtn.addEventListener("click", function() {
+    targetSection.classList.add("fullscreen");
+    targetSection.classList.add("slide-in");
+    targetSection.classList.remove("slide-out");
+  });
+
+  exitBtn.addEventListener("click", function() {
+    targetSection.classList.add("slide-out");
+    targetSection.classList.remove("slide-in");
+    setTimeout(function() {
+      targetSection.classList.remove("fullscreen");
+    }, 500); // Tempo deve ser igual à duração da animação
+  });
+});
+
 		</script>
 	</body>
 </html>

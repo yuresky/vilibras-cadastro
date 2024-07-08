@@ -136,7 +136,7 @@ h1::before{
     background: #008bb0;
     z-index: 100;
     position: absolute;
-    top: 95em;
+    top: 105em;
     right: -10%;
     margin: 0;
     padding: 0;
@@ -168,7 +168,7 @@ h1::before{
         rgba(0, 0, 0, 0)
     );
     display: block;
-    top: 80em;
+    top: 90em;
     left: 50%;
 }
 
@@ -224,5 +224,5 @@ h1::before{
 }
 
 .title h1{
-	font-size: 40px !important;
+	font-size: 10px !important;
 }

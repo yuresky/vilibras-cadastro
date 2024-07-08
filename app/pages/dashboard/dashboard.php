@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {
@@ -44,7 +44,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         <section class="recepcao">
             <div class="text-recepcao">
                 <i class="fa-solid fa-location-dot"></i>
-                <p class="text">Seja bem-vindo(a), <?php echo htmlspecialchars($_SESSION['login']) ?>, ao seu <span id="dash">Dashboard</span></p>
+                <p class="text">Seja bem-vindo(a), <?=htmlspecialchars($usuarioLogado['nome'])?>, ao seu <span id="dash">Dashboard</span></p>
             </div>
             <img src="../../../public/images/desktop computer-rafiki.svg" alt="">
 
@@ -90,16 +90,14 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         </section>
     </main>
 
-    <?php  ?>
-
     <aside>
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
             <a href="../perfil/perfil.php" class="image-perfil">
-                <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
+                <img id="image" src="<?=$usuarioLogado['path_img']?>" alt="Perfil usuário">
             </a>
             <a href="../perfil/perfil.php" class="box-perfil">
-                <p id="user-perfil"><?php echo htmlspecialchars($_SESSION['login']) ?></p>
+                <p id="user-perfil"><?=htmlspecialchars($usuarioLogado['nome'])?></p>
             </a>
             <div class="calendar">
                 <div class="header-calendar">
@@ -183,13 +181,12 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         </section>
     </aside>
 
+<!-- importanto o gráficos do chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 
-var qtdQuestoesErrou = <?php echo $qtdQuestoesErrou; ?>;
-var qtdQuestoesAcertou = <?php echo $qtdQuestoesAcertou; ?>;
-
-console.log(qtdQuestoesAcertou,'/',qtdQuestoesErrou);
+var qtdQuestoesErrou = <?=$qtdQuestoesErrou?>;
+var qtdQuestoesAcertou = <?=$qtdQuestoesAcertou?>;
 
 const charts = document.getElementById('chartsQuestion');
 
